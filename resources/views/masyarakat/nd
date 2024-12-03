@@ -1,0 +1,26 @@
+@extends('masyarakat.masyarakat-layout')
+
+@section('title', 'Form Laporan')
+
+@section('content')
+    <h1>Form Pengaduan</h1>
+    <div class="form-laporan">
+        <form method="POST" action="{{ route('laporkan.store') }}" enctype="multipart/form-data">            @csrf
+            <div>
+                <label for="nama">Nama</label>
+                <input type="text" name="nama" id="nama" required>
+            </div>
+            <div>
+                <label for="deskripsi">Deskripsi pengaduan</label>
+                <textarea name="deskripsi" id="deskripsi" rows="4" required></textarea>
+            </div>
+            <div>
+                <label for="foto">Foto pengaduan </label>
+                <input type="file" name="foto" id="foto" accept="image/*">
+            </div>
+            <div>
+                <button type="submit">Kirim Laporan</button>
+            </div>
+        </form>
+    </div>
+@endsection
